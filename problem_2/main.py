@@ -8,32 +8,32 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 find the sum of the even-valued terms.
 """
 sequence = []
-even_only = []
 
 
-def fibonacci_generator(max_number):
+def even_fibonacci_generator(max_number):
+    a = 0
+    b = 1
+    c = 0
 
-    for num in range(1, int(max_number) + 1):
+    while True:
+            c = a + b
 
-        if num < 3:
-            new_num = num
-        else:
-            new_num = sequence[-1] + sequence[-2]
-        sequence.append(new_num)
-
-    return(sequence)
-
-
-def even_number_adder():
-    for num in sequence:
-        if num % 2 == 0:
-            if sum(even_only) + num > 4000000:
-                print("Your number is too high!")
+            if c > max_number:
                 break
+
+            elif c % 2 == 0:
+                sequence.append(c)
+                a = b
+                b = c
+
+            elif c % 2 == 1:
+                a = b
+                b = c
+
             else:
-                even_only.append(num)
-    print(sum(even_only))
+                break
+
+    print(sequence)
 
 
-fibonacci_generator(100)
-even_number_adder()
+even_fibonacci_generator(4000000)

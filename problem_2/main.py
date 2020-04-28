@@ -7,10 +7,11 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 find the sum of the even-valued terms.
 """
-sequence = []
+
 
 
 def even_fibonacci_generator(max_number):
+    sequence = []
     a = 0
     b = 1
     c = 0
@@ -33,7 +34,7 @@ def even_fibonacci_generator(max_number):
             else:
                 break
 
-    print(sequence)
+    print(sum(sequence))
 
 
 even_fibonacci_generator(4000000)

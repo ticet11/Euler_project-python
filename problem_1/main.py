@@ -5,7 +5,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 
-def fizz_buzz():
+def sum_of_multiples():
     sum_list = []
     max_number = input('What should the max number be?:')
     for num in range(int(max_number)):
@@ -15,4 +15,4 @@ def fizz_buzz():
     print(sum(sum_list))
 
 
-fizz_buzz()
+sum_of_multiples()
